@@ -3,126 +3,87 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PanelSell</title>
+<title>Panel Sell BD</title>
+<meta name="description" content="Hosting ও Software Panel অর্ডার করুন — Panel Sell BD">
 <style>
-:root{--green:#078b18;--dark:#08162a;--line:#d8e5d9;--bg:#f4f8f4}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:#25303b;font-family:system-ui,Arial,sans-serif;padding-bottom:88px}
-header{position:sticky;top:0;z-index:3;padding:12px;background:linear-gradient(110deg,#0a921a,#006c12);border-radius:0 0 20px 20px}
-.top{display:flex;gap:8px;align-items:center;background:#f7fff7;border:2px solid #dce9dc;border-radius:40px;padding:6px}
-.circle{width:42px;height:42px;border:2px solid #b7d7b9;border-radius:50%;background:var(--green);color:#fff;font-size:21px}
-.brand{flex:1;text-align:center;font-weight:900;letter-spacing:1px;color:var(--green);font-size:18px}
-.money{background:#087d16;color:#fff;border-radius:25px;padding:10px;font-weight:800;font-size:12px}
-main{max-width:950px;margin:auto;padding:12px}
-.banner{min-height:165px;border-radius:20px;background:radial-gradient(ellipse at 20% 70%,#a23b20 0,transparent 32%),linear-gradient(110deg,#080d19,#102a42 58%,#050911);display:flex;align-items:center;justify-content:flex-end;padding:18px;color:#fff;margin:5px 0 18px}
-.banner-copy{text-align:center;width:72%}
-.banner h2{display:inline-block;background:#ffec29;color:#080808;padding:5px 10px;border-radius:5px;font-size:clamp(17px,4vw,28px);margin:0}
-.banner p{font-size:12px;letter-spacing:1px}
-.pay-logos{display:flex;gap:6px;justify-content:center;flex-wrap:wrap}
-.pay-logos span{background:#fff;color:#152c59;border-radius:8px;padding:8px;font-size:11px;font-weight:900}
-.cats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;margin:16px 0 22px}
-.cat{border:2px solid var(--line);background:#fff;border-radius:25px;padding:12px 4px;font-weight:800;color:#25303b}
-.cat.active{background:var(--green);color:#fff}
-.products{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
-.product{background:#fff;border:2px solid #c9e3cb;border-radius:18px;overflow:hidden;box-shadow:0 4px 12px #0001}
-.art{height:clamp(110px,26vw,210px);background:#050509;color:#fff;display:grid;place-items:center;text-align:center;position:relative;padding:12px}
-.art:before{content:"";position:absolute;inset:8px;border:2px solid var(--c);border-radius:15px;box-shadow:0 0 15px var(--c),inset 0 0 15px var(--c)}
-.art b{font-size:clamp(14px,3vw,28px);position:relative;text-shadow:0 0 12px var(--c)}
-.off{position:absolute;top:10px;left:8px;background:#db2545;border-radius:12px;padding:4px 6px;font-size:10px}
-.body{text-align:center;padding:8px;background:linear-gradient(#fff,#f4fff5)}
-.name{border:1px solid #cfe3d1;background:#f8fff8;border-radius:10px;min-height:45px;display:grid;place-items:center;font-size:11px;font-weight:900;padding:4px}
-.price{display:inline-block;color:var(--green);border:1px solid #c4e2c5;border-radius:22px;padding:5px 10px;margin:8px 0;font-weight:900}
-.btn{display:block;width:100%;padding:11px 4px;border:0;border-radius:9px;color:#fff;font-weight:850;margin-top:7px;background:var(--green)}
-.btn.alt{background:#5d52e9}
-.panel{background:#fff;border:1px solid #dfe8df;border-radius:16px;padding:16px;margin:14px 0}
-.hidden{display:none!important}
-label{display:block;margin:12px 0;font-size:13px}
-input,select{display:block;width:100%;padding:12px;border:1px solid #d5ddd6;border-radius:9px;margin-top:5px;font:inherit}
-.bottom{position:fixed;bottom:7px;left:8px;right:8px;background:#fffffff2;border:1px solid #ddd;border-radius:22px;padding:5px;display:grid;grid-template-columns:repeat(5,1fr);z-index:4;box-shadow:0 4px 18px #0002}
-.nav{border:0;background:transparent;color:#687583;padding:7px 1px;font-size:10px;font-weight:800;border-radius:14px}
-.nav span{display:block;font-size:21px}
-.nav.active{color:var(--green);background:#e8f8e9}
-.note{font-size:12px;color:#735c24;background:#fff5dd;padding:12px;border-radius:10px;margin-top:14px;line-height:1.5}
-.tablewrap{overflow:auto}table{width:100%;border-collapse:collapse}td,th{text-align:left;padding:8px;border-bottom:1px solid #ddd;font-size:12px}
-@media(max-width:430px){.products{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.art{height:130px}.banner-copy{width:78%}.brand{font-size:14px}.money{padding:8px 5px}.circle{width:36px;height:36px}.cat{font-size:11px;padding:10px 2px}}
+:root{--bg:#0b1020;--card:#121a2e;--line:#26324c;--text:#eef3ff;--muted:#aab6d1;--blue:#6ea8fe;--cyan:#5eead4}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(160deg,#0b1020,#101b35);color:var(--text);font-family:system-ui,-apple-system,"Noto Sans Bengali",sans-serif}
+.wrap{max-width:980px;margin:auto;padding:18px}.nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0 24px}.brand{font-size:21px;font-weight:800}.brand span{color:var(--cyan)}.pill{border:1px solid var(--line);border-radius:999px;padding:8px 12px;color:var(--muted);font-size:13px}
+.hero{padding:26px 0 28px}.eyebrow{color:var(--cyan);font-weight:700;font-size:13px}.hero h1{font-size:clamp(30px,7vw,48px);line-height:1.15;margin:12px 0}.hero p{color:var(--muted);line-height:1.8;max-width:650px}.btn{display:inline-block;background:linear-gradient(100deg,#5eead4,#6ea8fe);color:#07101f;text-decoration:none;border:0;border-radius:12px;padding:12px 17px;font-weight:800;cursor:pointer}
+.section-title{margin:22px 0 14px;font-size:23px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}.card{background:rgba(18,26,46,.94);border:1px solid var(--line);border-radius:18px;padding:18px}.tag{display:inline-block;color:var(--cyan);font-size:12px;background:#12343b;padding:5px 9px;border-radius:999px}.card h3{margin:12px 0 6px}.card p{color:var(--muted);font-size:14px;line-height:1.7}.price{font-size:24px;font-weight:800;margin:14px 0}.price small{font-size:12px;color:var(--muted);font-weight:500}
+.panel{margin-top:24px;background:rgba(18,26,46,.96);border:1px solid var(--line);border-radius:18px;padding:20px}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{display:flex;flex-direction:column;gap:7px}.field.full{grid-column:1/-1}label{font-size:14px;color:#dbe5ff}input,select,textarea{width:100%;background:#0b1224;color:var(--text);border:1px solid #34415f;border-radius:10px;padding:12px;font:inherit}textarea{min-height:85px;resize:vertical}.hint{font-size:12px;color:var(--muted);line-height:1.7}.paybox{border:1px dashed #405276;padding:14px;border-radius:12px;margin:12px 0;line-height:1.9}.paybox strong{color:var(--cyan)}.notice{padding:12px;border-radius:12px;background:#172844;color:#cbd8f7;font-size:13px;line-height:1.7;margin:12px 0}.status{margin-top:12px;font-size:14px;line-height:1.7}.footer{color:var(--muted);text-align:center;padding:30px 0;font-size:13px}
+@media(max-width:560px){.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}.wrap{padding:14px}.panel{padding:15px}}
 </style>
 </head>
 <body>
-<header><div class="top">
-<button class="circle" onclick="showPage('home')" aria-label="Home">⌂</button>
-<div class="brand">PANELSELL</div><div class="money">🇧🇩 BDT</div>
-<button class="circle" onclick="showPage('account')" aria-label="Account">☰</button>
-</div></header>
-<main>
-<section id="home">
-<div class="banner"><div class="banner-copy"><h2>PANELSELL STORE</h2><div class="pay-logos"><span>bKash</span><span>Nagad</span><span>Rocket</span></div><p>DIGITAL PRODUCTS STORE</p></div></div>
-<div class="cats">
-<button class="cat active" onclick="filterProducts('All',this)">All</button>
-<button class="cat" onclick="filterProducts('NON ROOT',this)">NON ROOT</button>
-<button class="cat" onclick="filterProducts('ROOT',this)">ROOT</button>
-<button class="cat" onclick="filterProducts('More',this)">More</button>
+<div class="wrap">
+  <nav class="nav"><div class="brand">⚡ Panel <span>Sell BD</span></div><div class="pill">বাংলাদেশ 🇧🇩</div></nav>
+  <header class="hero">
+    <div class="eyebrow">HOSTING & SOFTWARE PANELS</div>
+    <h1>আপনার প্রয়োজনীয় প্যানেল,<br>এক জায়গায়।</h1>
+    <p>পছন্দের প্যানেল নির্বাচন করুন, bKash/Nagad দিয়ে পেমেন্ট করুন এবং Transaction ID জমা দিন। পেমেন্ট যাচাইয়ের পর অর্ডার ম্যানুয়ালি ডেলিভারি করা হবে।</p>
+    <a class="btn" href="#order">অর্ডার করুন ↓</a>
+  </header>
+
+  <h2 class="section-title">আমাদের প্যানেল</h2>
+  <div class="grid" id="products">
+    <article class="card"><span class="tag">HOSTING</span><h3>Basic Hosting Panel</h3><p>ছোট ওয়েবসাইট বা পরীক্ষামূলক প্রজেক্টের জন্য।</p><div class="price">৳ 199 <small>/ প্যাকেজ</small></div><button class="btn choose" data-product="Basic Hosting Panel" data-price="199">এই প্যানেল নিন</button></article>
+    <article class="card"><span class="tag">HOSTING</span><h3>Premium Hosting Panel</h3><p>বেশি রিসোর্স প্রয়োজন এমন প্রজেক্টের জন্য।</p><div class="price">৳ 499 <small>/ প্যাকেজ</small></div><button class="btn choose" data-product="Premium Hosting Panel" data-price="499">এই প্যানেল নিন</button></article>
+    <article class="card"><span class="tag">SOFTWARE</span><h3>Software Panel</h3><p>সফটওয়্যার প্যানেলের অর্ডার দিন এবং বিস্তারিত জানান।</p><div class="price">৳ 299 <small>/ প্যাকেজ</small></div><button class="btn choose" data-product="Software Panel" data-price="299">এই প্যানেল নিন</button></article>
+  </div>
+
+  <section class="panel" id="order">
+    <h2 class="section-title" style="margin-top:0">অর্ডার ফর্ম</h2>
+    <div class="notice">দামগুলো নমুনা হিসেবে দেওয়া। বিক্রি শুরু করার আগে নিজের আসল প্যাকেজ, দাম ও পেমেন্ট নম্বর বসিয়ে নিন।</div>
+    <form id="orderForm">
+      <div class="formgrid">
+        <div class="field"><label for="customer">আপনার নাম</label><input id="customer" required maxlength="80" placeholder="সিফাত ইসলাম"></div>
+        <div class="field"><label for="contact">মোবাইল নম্বর / যোগাযোগ</label><input id="contact" required maxlength="40" placeholder="01XXXXXXXXX"></div>
+        <div class="field"><label for="product">প্যানেল নির্বাচন</label><select id="product" required><option value="">প্যানেল বাছুন</option><option value="Basic Hosting Panel" data-price="199">Basic Hosting Panel — ৳199</option><option value="Premium Hosting Panel" data-price="499">Premium Hosting Panel — ৳499</option><option value="Software Panel" data-price="299">Software Panel — ৳299</option></select></div>
+        <div class="field"><label for="payment">পেমেন্ট মাধ্যম</label><select id="payment" required><option value="">বাছুন</option><option>bKash</option><option>Nagad</option></select></div>
+        <div class="field"><label for="trx">Transaction ID</label><input id="trx" required maxlength="100" placeholder="পেমেন্টের TrxID"></div>
+        <div class="field"><label for="amount">পেমেন্টের পরিমাণ (৳)</label><input id="amount" type="number" min="1" required placeholder="যেমন 199"></div>
+        <div class="field full"><label for="details">অতিরিক্ত তথ্য (ঐচ্ছিক)</label><textarea id="details" maxlength="1000" placeholder="কোনো বিশেষ প্রয়োজন থাকলে লিখুন"></textarea></div>
+      </div>
+      <div class="paybox"><strong>পেমেন্ট নম্বর</strong><br>bKash: <span id="bkash">01779071812</span><br>Nagad: <span id="nagad">01779071812</span><div class="hint">এখানে আপনার নিজের Merchant/Personal payment number বসাবেন। পেমেন্ট করার আগে সঠিক নম্বর নিশ্চিত করুন।</div></div>
+      <button class="btn" type="submit" style="width:100%">অর্ডার জমা দিন</button>
+      <div id="status" class="status" role="status"></div>
+    </form>
+    <p class="hint">এই প্রাথমিক সংস্করণে ফর্মটি WhatsApp-এ অর্ডারের তথ্য পাঠানোর জন্য প্রস্তুত। নিচের কোডে নিজের WhatsApp নম্বর না বসালে অর্ডার পাঠানো হবে না। Firebase-এ অর্ডার সংরক্ষণ ও নিরাপদ Admin Panel পরের ধাপে যুক্ত করতে হবে।</p>
+  </section>
+  <footer class="footer">© <span id="year"></span> Panel Sell BD · পেমেন্ট যাচাইয়ের পর ম্যানুয়াল ডেলিভারি</footer>
 </div>
-<h3>Featured Products</h3><div class="products" id="products"></div>
-<div class="note">এটি শুধু সামনের দিকের ডেমো। এখানে কোনো আসল পেমেন্ট, অ্যাকাউন্ট, অর্ডার ডেলিভারি বা ফাইল ডাউনলোড চালু নেই। টাকা বা পাসওয়ার্ড দেবেন না।</div>
-</section>
-<section id="fund" class="panel hidden"><h2>Add Fund</h2>
-<form onsubmit="demoPayment(event)">
-<label>পেমেন্ট পদ্ধতি<select id="method"><option>bKash</option><option>Nagad</option><option>Rocket</option></select></label>
-<label>পরিমাণ (৳)<input id="amount" type="number" min="1" step="1" required></label>
-<label>ট্রানজ্যাকশন রেফারেন্স<input id="trx" minlength="4" required></label>
-<button class="btn">ডেমো রিকোয়েস্ট দেখুন</button><p id="paymsg" role="status"></p>
-</form></section>
-<section id="orders" class="panel hidden"><h2>আমার অর্ডার</h2><div class="tablewrap"><table><thead><tr><th>পণ্য</th><th>মূল্য</th><th>স্ট্যাটাস</th></tr></thead><tbody id="orderrows"><tr><td colspan="3">এখনো কোনো ডেমো অর্ডার নেই</td></tr></tbody></table></div></section>
-<section id="keys" class="panel hidden"><h2>My Key</h2><p>ডেমোতে কোনো key বা download delivery নেই।</p></section>
-<section id="account" class="panel hidden"><h2>Account</h2><p>এটি একটি ডেমো অ্যাকাউন্ট পেজ। আসল লগইন এখনো যুক্ত নয়।</p><button class="btn" onclick="alert('আসল লগইন চালু করতে নিরাপদ backend লাগবে।')">লগইন সম্পর্কে</button><p>ডেমো ব্যালেন্স: ৳0.00</p></section>
-</main>
-<nav class="bottom">
-<button class="nav active" onclick="showPage('home',this)"><span>⌂</span>Home</button>
-<button class="nav" onclick="showPage('fund',this)"><span>▰</span>Add Fund</button>
-<button class="nav" onclick="showPage('orders',this)"><span>♙</span>Order</button>
-<button class="nav" onclick="showPage('keys',this)"><span>▦</span>My Key</button>
-<button class="nav" onclick="showPage('account',this)"><span>●</span>Account</button>
-</nav>
 <script>
-const products=[
-{name:'DRIP WIRE EXTERNAL',cat:'ROOT',price:29,art:'DRIP WIRE',color:'#ed42ed',off:'-5%'},
-{name:'DRIP CLIENT',cat:'NON ROOT',price:35,art:'DRIP CLIENT',color:'#b22aff',off:'-20%'},
-{name:'BALA MOD MENU',cat:'NON ROOT',price:24,art:'BALA MOD',color:'#ff7a22',off:'-5%'},
-{name:'PHANTOM ANDROID & IOS',cat:'More',price:12,art:'PHANTOM',color:'#fff',off:'-20%'},
-{name:'ALPHA DIGITAL TOOL',cat:'NON ROOT',price:20,art:'ALPHA',color:'#e22',off:'-10%'},
-{name:'X-REG UTILITY',cat:'NON ROOT',price:20,art:'X-REG',color:'#287bff',off:'-10%'}
-];
-let selectedCategory='All';
-let demoOrders=[];
-function renderProducts(){
- const list=products.filter(p=>selectedCategory==='All'||p.cat===selectedCategory);
- document.getElementById('products').innerHTML=list.map((p,i)=>`<article class="product"><div class="art" style="--c:${p.color}"><span class="off">${p.off}</span><b>${p.art}</b></div><div class="body"><div class="name">${p.name}</div><div class="price">৳${p.price}</div><button class="btn alt" onclick="showInfo('${p.name}')">FILE &amp; SETUP</button><button class="btn" onclick="buyDemo('${p.name}',${p.price})">🛒 BUY NOW</button></div></article>`).join('');
-}
-function filterProducts(category,button){
- selectedCategory=category;
- document.querySelectorAll('.cats .cat').forEach(b=>b.classList.remove('active'));
- button.classList.add('active');
- renderProducts();
-}
-function showPage(id,button){
- document.querySelectorAll('main > section').forEach(s=>s.classList.add('hidden'));
- document.getElementById(id).classList.remove('hidden');
- document.querySelectorAll('.nav').forEach(b=>b.classList.remove('active'));
- if(button)button.classList.add('active');
- else if(id==='home')document.querySelector('.nav').classList.add('active');
-}
-function showInfo(name){alert(name+'\\nএটি ডেমো। আসল ফাইল/সেটআপ ডাউনলোড যুক্ত করা নেই।');}
-function buyDemo(name,price){
- if(!confirm(name+' — ৳'+price+'\\nএটি শুধু ডেমো অর্ডার; কোনো টাকা নেওয়া হবে না। চালাবেন?'))return;
- demoOrders.push({name,price,status:'ডেমো'});
- document.getElementById('orderrows').innerHTML=demoOrders.map(o=>`<tr><td>${o.name}</td><td>৳${o.price}</td><td>${o.status}</td></tr>`).join('');
- showPage('orders',document.querySelectorAll('.nav')[2]);
-}
-function demoPayment(e){
- e.preventDefault();
- document.getElementById('paymsg').textContent='এটি শুধু ডেমো। কোনো পেমেন্ট পাঠানো হয়নি এবং কোনো ফান্ড যোগ হয়নি।';
-}
-renderProducts();
+const WHATSAPP_NUMBER = ""; // দেশের কোডসহ নম্বর দিন, যেমন 8801779071812 (শুধু সংখ্যা)
+document.getElementById("year").textContent = new Date().getFullYear();
+document.querySelectorAll(".choose").forEach(btn => btn.addEventListener("click", () => {
+  document.getElementById("product").value = btn.dataset.product;
+  document.getElementById("amount").value = btn.dataset.price;
+  document.getElementById("order").scrollIntoView({behavior:"smooth"});
+}));
+document.getElementById("product").addEventListener("change", e => {
+  const option = e.target.selectedOptions[0];
+  if(option && option.dataset.price) document.getElementById("amount").value = option.dataset.price;
+});
+document.getElementById("orderForm").addEventListener("submit", e => {
+  e.preventDefault();
+  const status = document.getElementById("status");
+  if(!WHATSAPP_NUMBER){
+    status.textContent = "অর্ডার ফর্ম তৈরি আছে। সাইট চালুর আগে কোডে WHATSAPP_NUMBER-এ আপনার WhatsApp নম্বর বসাতে হবে।";
+    return;
+  }
+  const data = {
+    নাম: document.getElementById("customer").value.trim(),
+    যোগাযোগ: document.getElementById("contact").value.trim(),
+    প্যানেল: document.getElementById("product").value,
+    মাধ্যম: document.getElementById("payment").value,
+    Transaction_ID: document.getElementById("trx").value.trim(),
+    পরিমাণ: document.getElementById("amount").value,
+    অতিরিক্ত_তথ্য: document.getElementById("details").value.trim()
+  };
+  const msg = "Panel Sell BD - নতুন অর্ডার%0A" + Object.entries(data).map(([k,v]) => `${k}: ${v}`).join("%0A");
+  window.location.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg.replaceAll("%0A","\n"))}`;
+});
 </script>
 </body>
 </html>
